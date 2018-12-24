@@ -1,3 +1,5 @@
+// test
+
 $(document).ready(function(){
 
   // This sets all the background images of the projects

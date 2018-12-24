@@ -1,0 +1,202 @@
+/*
+  Fancy Stylesheet Uuiiiiuiuiuiui
+*/
+
+@font-face {
+    font-family: Calibre;
+    src: url('../font/Calibre-Semibold.otf');
+}
+
+body {
+  /*margin: 0;*/
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 22px;
+  font-family: Calibre, arial, sans-serif;
+  background: linear-gradient(135deg, #0a002a, #25002a);
+  /*color of text*/
+  color: #696993;
+}
+
+/*ScrollDown Animation Section Start*/
+.scrollDown{
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+}
+
+.scrollDown:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 1px;
+  height: 30px;
+  background: #696993;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate{
+  0%
+  {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45%
+  {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55%
+  {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100%
+  {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+/*ScrollDown Animation Section End*/
+
+h1.title {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  transition: left 0.5s ease;
+  letter-spacing: -4px;
+  font-weight: 900;
+  /* Gradient mapping for fluid gradient (functions.js) */
+  background: linear-gradient(90deg, #ffc1b3 41%, #ffc1fb 50%, #c7c6ff 59%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* background-repeat: repeat-x; */
+  /*cursor: pointer;*/
+}
+
+
+a.link-about, a.link-projects {
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  transition: all 0.3s ease;
+  transition ease-in-out;
+  font-size: 27px;
+}
+
+a.link-about {
+  text-align: right;
+  right: 20px;
+  transform: rotate(270deg);
+}
+
+a.link-projects {
+  text-align: left;
+  left: -100px;
+  transform: rotate(90deg);
+}
+
+p {
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+div.gradient-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+}
+
+div.gradient-bar-second {
+  position: absolute;
+  right: -20px;
+  top: 0;
+  width: 20px;
+}
+
+main.projects, main.about {
+  position: absolute;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  transition-timing-function: ease-in-out;
+}
+
+main.projects {
+  top: 0;
+  left: 0vw;
+}
+
+main.about {
+  top: 0;
+  left: 100vw;
+}
+
+main section {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+main.projects section p {
+  display: none;
+}
+
+
+/*
+  main.projects section.project1 {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+}
+*/
+
+
+
+main.about section.portrait {
+  background-image: url('../images/portrait.jpg');
+}
+
+
+section.about-text {
+  width: 50em;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  display: block;
+  /*-webkit-margin-before: 2em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 250px;
+  -webkit-margin-end: 0px;*/
+  box-sizing: border-box;
+}
+
+p.underConstruction {
+  background: linear-gradient(90deg, #ffc1b3 4%, #ffc1fb 50%, #c7c6ff 67%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-text::selection {
+  color: #ffc1fb;
+}
+
+.mail-text::selection {
+  color: #c7c6ff;
+}

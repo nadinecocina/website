@@ -1,7 +1,7 @@
 // test
+var aboutActive = false;
 
 $(document).ready(function(){
-
   // This sets all the background images of the projects
   // For each project you need a .jpg-file in the images folder that is named: "project" + the number (see examples)
   var projects = $('.projects section');
@@ -46,7 +46,12 @@ $(document).ready(function(){
 // Lots of math, just trust me on this one
 $(window).scroll(function(){
   var i = Math.ceil($('.title').offset().top / $( window ).height());
-  $('.title').text($('section.project' + i + ' p.project-name').text());
+  var sectionText = $('section.project' + i + ' p.project-name').text();
+
+  $('.title').text(sectionText);
+  if (aboutActive && i !== 1) {
+    $('.title').text('nadinecocina');
+  }
 });
 
 // Fix scoll height of about page (so it can't scroll down more than 2 full slides)
@@ -66,6 +71,7 @@ $('.link-projects').click(function(){
 
 // This controls the transition from work to about
 $('.link-about').click(function(){
+  aboutActive = true;
   $('.projects').css('left', '-100vw');
   $('.about').css('left', '0');
   $('.title').css('left', '11rem');  // it was '-50vw' > name disappeared completely
@@ -77,6 +83,7 @@ $('.link-about').click(function(){
 
 // This controls the transition from about to work
 $('.link-projects').click(function(){
+  aboutActive = false;
   $('.projects').css('left', '0');
   $('.about').css('left', '100vw');
   $('.title').css('left', '50vw');
